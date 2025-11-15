@@ -1,6 +1,6 @@
 namespace RestaurantSystem
 {
-    public class RestaurantSystem
+    public class Restaurant
     {
         private List<MenuItem> _menu;
         private Queue<Order> _orderQueue;
@@ -52,15 +52,15 @@ namespace RestaurantSystem
                 return;            
             }
 
-            Order HandleOrder = _orderQueue.Dequeue();
-            Console.WriteLine($"✓ Hanterade beställning #{handledOrder.OrderId} från Bord {handledOrder.TableNumber}");
+            Order handleOrder = _orderQueue.Dequeue();
+            Console.WriteLine($"✓ Hanterade beställning #{handleOrder.OrderId} från Bord {handleOrder.TableNumber}");
         }
 
         // Writes out all the orders in queue
         public void ShowOrders()
         {
             Console.WriteLine("\n===== ALLA BESTÅLLNINGAR I KÖN =====");
-            if (_orderQueue.Count() == 0)
+            if (_orderQueue.Count == 0)
             {
                 Console.WriteLine("Kön är tom...");
             }
@@ -79,7 +79,7 @@ namespace RestaurantSystem
         public void ShowNextOrder()
         {
             Console.WriteLine("\n===== NÄSTA BESTÄLLNING =====");
-            if (_orderQueue == 0)
+            if (_orderQueue.Count == 0)
             {
                 System.Console.WriteLine("Inga beställningar i kön...");
             }
